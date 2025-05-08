@@ -29,7 +29,7 @@
 
 <!-- @if, @else sytax approach -->
  
-@if (isAdmin) {
+<!-- @if (isAdmin) {
   <h1>Welcome Admin</h1>
 }
 @else if (isMember) {
@@ -37,4 +37,138 @@
 }
 @else if(isGuest){
   <h1>Welcome Guest</h1>
+} -->
+
+<!-- @if Directive with number values -->
+
+<!-- <button (click)="countLoginAttemps()" *ngIf="loginCount < 3">Click</button>
+
+
+
+@if(loginCount > 2){
+  <h4 >Exceed 3 attemps. Try Again Later</h4>
 }
+@if(loginCount < 3) {
+  <button (click)="countLoginAttemps()" >Click</button>
+} -->
+
+
+     <!-- @if Directive with string values -->
+
+     <!-- <h4 *ngIf="userRole == 'admin'; else memberMessage">Welcome Admin</h4>
+
+     <ng-template #memberMessage>
+      <h4>Welcome Member</h4>
+     </ng-template>
+
+     @if(userRole=='admin'){
+      <h4>Welcome Admin</h4>
+     }
+     @else if(userRole=='member'){
+      <h4>Welcome Member</h4>
+     } -->
+
+     <!-- ng-template outet -->
+      <!-- <ng-template #callToAction>
+        <button>log in</button>
+        <p>Call to Action</p>
+      </ng-template>
+      <div [ngTemplateOutlet]="callToAction">
+        <h4>header</h4>
+      </div>
+      <div [ngTemplateOutlet]="callToAction">
+        <h4>Hero</h4>
+      </div>
+      <div [ngTemplateOutlet]="callToAction">
+        <h4>Footer</h4>
+      </div> -->
+
+            <!-- Ng-For Directive -->
+
+      <!-- <h4>{{users[0]}}</h4>
+      <h4>{{users[1]}}</h4>
+      <h4>{{users[2]}}</h4>
+      <h4>Loaded Using Ngfor</h4>
+      <h4 *ngFor="let user of users">{{user}}</h4> -->
+
+        <!-- <h4>For Syntax Approach</h4>
+
+        @for(user of users; track user){
+          <h4>{{user}} - Loaded Using for Syntax block</h4>
+        }
+
+        <ul>
+          <li *ngFor="let user of users">{{user}}</li>
+        </ul>
+        <ul>
+        @for(user of users; track user) {
+          
+            <li>{{user}}</li>
+         
+        }
+       </ul> -->
+
+                  <!-- Fetch Array Object -->
+       <!-- <ul>
+        <li *ngFor="let user of userObj; let i = index; let userCount = count">
+          {{userCount}} {{i}} {{user.email}} <button (click)="onDelete(i)">
+            Delete</button></li> -->
+
+       <!-- </ul>
+       <div *ngIf="userObj.length == 0">
+        <P>No users </P>
+       </div> -->
+       <!-- @if(userObj.length == 0){
+        <p>No Users to Desplay - loaded using Syntax</p>
+       }
+
+       <ul>
+       @for(user of userObj; track user; let i = $index; let userCount = $count; let first=$first; let last = $last ; let even = $even; let odd = $odd){
+        <li>{{odd}}{{userCount}} {{i}} {{user.email}} <button (click)="onDelete(i)">Delete</button></li>
+       }
+      @empty {
+        <p>No Users to Desplay - loaded using empty Syntax</p>
+      }
+   </ul>
+
+              <!-- Change Detection -->
+  <!-- <button (click)="addNewUser()">Add New User</button>  -->
+
+              <!-- switch-case
+  <div [ngSwitch]="userRole"> -->
+  
+    <!-- <p *ngSwitchCase = "'Admin'">Welcome Admin</p>
+    <p *ngSwitchCase = "'Member'">Welcome Member</p>
+    <p *ngSwitchCase = "'Editor'">Welcome Member</p>
+    <p *ngSwitchDefault>Please Login</p>
+  </div> -->
+
+  <!-- @switch (userRole) {
+    @case ('Admin') {
+      <p>Welcome Admin</p>
+    }
+    @case ('Member') {
+      <p>Welcome Member</p>
+    }
+    @case ('Editor') {
+      <p>Welcome Editor</p>
+    }
+    @default {
+      <p>Please Login</p>
+    } -->
+<!--       
+  } -->
+
+  <h1 [ngStyle]="{
+    'color': isLoggedIn ? 'red':'green',
+    'textTransform' : isLoggedIn ? 'uppercase': 'lowercase'
+    }">
+    My Name Is Dinusha
+  </h1>
+
+  <h1 [ngClass]="{
+    'login': isLoggedIn,
+    'logout': !isLoggedIn
+  }">
+    Ng Class Directives
+  </h1>
